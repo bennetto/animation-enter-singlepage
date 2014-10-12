@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Launcher</title>
+
+  <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../src/launcher.css">
+</head>
+<body>
+  <div id="containerGlobal">
+
+      <!-- Enter page -->
+    <div class="enterPage">
+        <div class="panelLeftRight" >
+            <div class="content-panel">
+                <div class="textPanel">Nom du Site :</div>
+                 <form action="javascript:void(0);">
+                    <input type="text" id="login" class="input-login" name="login" placeholder="Login">
+                    <input type="password" id="password" class="input-password" name="password" placeholder="Password">
+                    <button class=" launch-open launch-open-right">Login</button>
+                 </form>
+            </div>
+        </div>
+    </div>
+
+      <!-- SITE  -->
+      <div class="body-site">
+        <div class="content-site">
+            <div class="textPanel">Site</div>
+                <button class="launch-back">back</button>
+            </div>
+      </div>
+  </div>
+
+  <script src="../launcher.js"></script>
+</body>
+</html>

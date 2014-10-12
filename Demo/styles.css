@@ -1,0 +1,94 @@
+
+
+#containerGlobal{
+    height: 100%;
+    width: 100%;
+}
+
+
+body{
+    height: 100%;
+    width: 100%;
+    background-color: #eeeeee;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/*
+  ____        _   _
+ |  _ \      | | | |
+ | |_) |_   _| |_| |_ ___  _ __
+ |  _ <| | | | __| __/ _ \| '_ \
+ | |_) | |_| | |_| || (_) | | | |
+ |____/ \__,_|\__|\__\___/|_| |_|
+*/
+
+button{
+    background: #10689a;
+    border: none;
+    color: #eee;
+    width: auto;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 2px;
+    letter-spacing: 1px;
+}
+
+/*
+  _______        _
+ |__   __|      | |
+    | | _____  _| |_ ___
+    | |/ _ \ \/ / __/ _ \
+    | |  __/>  <| ||  __/
+    |_|\___/_/\_\\__\___|
+*/
+.textPanel{
+    font-size: 80px;
+    color: #eeeeee;
+}
+
+/*
+  _____                   _
+ |_   _|                 | |
+   | |  _ __  _ __  _   _| |_
+   | | | '_ \| '_ \| | | | __|
+  _| |_| | | | |_) | |_| | |_
+ |_____|_| |_| .__/ \__,_|\__|
+             | |
+             |_|
+*/
+input{
+    border: 3px solid #eee;
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    line-height: 1.5;
+    font-size: 1.4em;
+    padding: 5px 10px;
+    color: #eee;
+    display: block;
+    width: 200px;
+    margin-left: 137px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: transparent;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #10689a;
+    font-style: italic;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #10689a;
+    font-style: italic;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #10689a;
+    font-style: italic;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #10689a;
+    font-style: italic;
+}
