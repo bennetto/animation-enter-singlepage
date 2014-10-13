@@ -8,7 +8,7 @@
  */
 
 //creation panel left and right
-var panel = document.getElementsByClassName("panelLeftRight")[0];
+var panel = document.getElementsByClassName("panel-openingPage")[0];
 
 var panelLeft = panel.cloneNode(true);
 panelLeft.className = "panel panelLeft";
@@ -16,15 +16,16 @@ panelLeft.className = "panel panelLeft";
 var panelRight= panel.cloneNode(true);
 panelRight.className = "panel panelRight";
 
-var launcher = document.getElementsByClassName("launcher")[0];
+var openingPage = document.getElementsByClassName("openingPage")[0];
 panelLeft.setAttribute("style","display:none;");
 panelRight.setAttribute("style","display:none;");
-launcher.appendChild(panelLeft);
-launcher.appendChild(panelRight);
+openingPage.appendChild(panelLeft);
+openingPage.appendChild(panelRight);
 
 var launchOpen = panel.getElementsByClassName("launch-open")[0];
 var bodySite = document.getElementsByClassName("body-site")[0];
 var launchBack =  document.getElementsByClassName("launch-back")[0];
+
 
 
 /*
@@ -38,9 +39,9 @@ var launchBack =  document.getElementsByClassName("launch-back")[0];
                     |_|
  */
 function changePerspective(){
-    var width = launcher.offsetWidth;
+    var width = openingPage.offsetWidth;
 
-    launcher.setAttribute("style"," -webkit-perspective: "+width+";-moz-perspective: "+width+";-o-perspective: "+width+";perspective: "+width+";");
+    openingPage.setAttribute("style"," -webkit-perspective: "+width+";-moz-perspective: "+width+";-o-perspective: "+width+";perspective: "+width+";");
     if(width%2 != 0)
     {
         panelLeft.style.width ="50.1%";
