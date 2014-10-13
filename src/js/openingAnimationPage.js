@@ -18,7 +18,7 @@ panelRight.className = "panel panelRight";
 
 var openingPage = document.getElementsByClassName("openingPage")[0];
 panelLeft.setAttribute("style","display:none;");
-panelRight.setAttribute("style","display:none;");
+panelRight.setAttribute("style","display:none;"); 
 openingPage.appendChild(panelLeft);
 openingPage.appendChild(panelRight);
 
