@@ -138,7 +138,7 @@ launchOpen.addEventListener("click",function(){
 
 //event click close
 var launchBack =  bodySite.getElementsByClassName("launch-back")[0];
-launchBack.addEventListener("click",function(){
+launchBack.addEventListener("click",function(){  // change for login sucess and error
     beforeCloseAnimation();
     bodySite.className  = saveClass["bodySite"] ;
     setTimeout(function(){
