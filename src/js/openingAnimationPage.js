@@ -74,13 +74,11 @@ function changePerspective(){
 var changeInput = function(){
     var inputs = panel.getElementsByTagName("input");
     for (var i=0;i<inputs.length;i++) {
-        inputs[i].addEventListener("change",function(e) {
-            var value = e.target.value;
-            var classInput = e.target.classList;
+            var value =inputs[i].value;
+            var classInput = inputs[i].classList;
             panelLeft.getElementsByClassName(classInput)[0].value = value;
             panelRight.getElementsByClassName(classInput)[0].value = value;
-        });
-    }
+        }
 }
 
 
