@@ -20,9 +20,6 @@ body {
 }
 .body-site {
   position: absolute;
-  display: table;
-  vertical-align: middle;
-  text-align: center;
   background-color: #aaaaaa;
   width: 100%;
   height: 100%;
@@ -46,11 +43,6 @@ body {
   -o-transform: scale(1, 1);
   transform: scale(1, 1);
 }
-.content-site {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-}
 /*
    ____                   _             _____
   / __ \                 (_)           |  __ \
@@ -67,21 +59,6 @@ body {
   position: absolute;
   z-index: 100;
 }
-.openingPage .panel {
-  height: 100%;
-  width: 50%;
-  display: table;
-  position: absolute;
-  top: 0px;
-  vertical-align: middle;
-  text-align: center;
-  overflow: hidden;
-  -webkit-transition: 1s ease;
-  -moz-transition: 1s ease;
-  -o-transition: 1s ease;
-  -ms-transition: 1s ease;
-  transition: 1s ease;
-}
 /*
   _____                 _
  |  __ \               | |
@@ -91,17 +68,27 @@ body {
  |_|   \__,_|_| |_|\___|_|
 */
 /* LEFT-RIGHT */
-.panel-openingPage {
-  position: absolute;
+.openingPage .panel {
   height: 100%;
-  width: 100%;
+  display: table;
+  position: absolute;
+  top: 0px;
   vertical-align: middle;
   text-align: center;
+  overflow: hidden;
   background-color: #47a3da;
+  -webkit-transition: 1s ease;
+  -moz-transition: 1s ease;
+  -o-transition: 1s ease;
+  -ms-transition: 1s ease;
+  transition: 1s ease;
+}
+.panel-openingPage {
+  width: 100%;
 }
 /* RIGHT */
 .panelRight {
-  background-color: #47a3da;
+  width: 50%;
   right: 0px;
   -webkit-transform-origin: right;
   -moz-transform-origin: right;
@@ -118,7 +105,7 @@ body {
 }
 /* LEFT */
 .panelLeft {
-  background-color: #47a3da;
+  width: 50%;
   left: 0px;
   -webkit-transform-origin: left;
   -moz-transform-origin: left;

@@ -4,36 +4,40 @@
 <head>
   <title>Launcher</title>
 
-  <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="../src/css/allAnimationOpening.min.css">
+  <link rel="stylesheet" href="styles.min.css">
+    <link rel="stylesheet" href="../src/css/animationOpening.min.css"> <!-- add css of lib -->
 </head>
 <body>
   <div id="containerGlobal">
 
       <!-- Enter page -->
     <div class="openingPage">
-        <div class="panel-openingPage">
-            <div class="content-panel">
+        <div class="panel panel-openingPage">
+            <!--Begin customizable -->
+            <div class="content-panel"> <!-- optional : if you want center content -->
                 <div class="textPanel">Nom du Site :</div>
                  <form action="javascript:void(0);">
                     <input type="text" id="login" class="input-login" name="login" placeholder="Login">
                     <input type="password" id="password" class="input-password" name="password" placeholder="Password">
-                    <button class=" launch-open launch-open-right">Login</button>
+                    <button class=" launch-open">Login</button>
                  </form>
             </div>
+            <!--End -->
         </div>
     </div>
 
       <!-- SITE  -->
       <div class="body-site">
+          <!--Begin customizable -->
         <div class="content-site">
             <div class="textPanel">Site</div>
                 <button class="launch-back">back</button>
             </div>
+          <!--End -->
       </div>
   </div>
 
-  <script src="../src/js/openingAnimationPage.js"></script>
+  <script src="../src/js/openingAnimationPage.js"></script>  <!--Add lib at the end or after event document.ready-->
 
 </body>
 </html>

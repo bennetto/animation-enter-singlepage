@@ -8,35 +8,32 @@
  */
 
 //creation panel left and right
-var panel = document.getElementsByClassName("panel-openingPage")[0];
-
-var panelLeft = panel.cloneNode(true);
-panelLeft.className = "panel panelLeft";
-
-var panelRight= panel.cloneNode(true);
-panelRight.className = "panel panelRight";
-
 var openingPage = document.getElementsByClassName("openingPage")[0];
+var panel = openingPage.getElementsByClassName("panel-openingPage")[0];
 
+//calcul size panelContent
 var panelContent = panel.getElementsByClassName("content-panel")[0];
 var width = panelContent.offsetWidth;
 var height = panelContent.offsetHeight;
 
+//create panel Left
+var panelLeft = panel.cloneNode(true);
+panelLeft.className = "panel panelLeft";
 panelLeft.setAttribute("style","display:none;");
 var panelLeftContent = panelLeft.getElementsByClassName("content-panel")[0];
-panelLeftContent.setAttribute("style","right:-"+width/2+"px;");
+panelLeftContent.style.right = -width/2+"px";
+openingPage.appendChild(panelLeft);
 
+//create panel right
+var panelRight= panel.cloneNode(true);
+panelRight.className = "panel panelRight";
 panelRight.setAttribute("style","display:none;");
 var panelRightContent = panelRight.getElementsByClassName("content-panel")[0];
-panelRightContent.setAttribute("style","left:-"+width/2+"px;");
-
-openingPage.appendChild(panelLeft);
+panelRightContent.style.left = -width/2+"px";
 openingPage.appendChild(panelRight);
 
-var launchOpen = panel.getElementsByClassName("launch-open")[0];
-var bodySite = document.getElementsByClassName("body-site")[0];
-var launchBack =  document.getElementsByClassName("launch-back")[0];
 
+var bodySite = document.getElementsByClassName("body-site")[0];
 
 
 /*
@@ -73,17 +70,19 @@ function changePerspective(){
                           |___/                   |_|
  */
 
-var form = panel.getElementsByTagName("form")[0];
-var inputs = form.getElementsByTagName("input");
 
-for (var i=0;i<inputs.length;i++) {
-    inputs[i].addEventListener("change",function(e) {
-        var value = e.target.value;
-        var classInput = e.target.classList;
-        panelLeft.getElementsByClassName(classInput)[0].value = value;
-        panelRight.getElementsByClassName(classInput)[0].value = value;
-    });
+var changeInput = function(){
+    var inputs = panel.getElementsByTagName("input");
+    for (var i=0;i<inputs.length;i++) {
+        inputs[i].addEventListener("change",function(e) {
+            var value = e.target.value;
+            var classInput = e.target.classList;
+            panelLeft.getElementsByClassName(classInput)[0].value = value;
+            panelRight.getElementsByClassName(classInput)[0].value = value;
+        });
+    }
 }
+
 
 
 /*
@@ -96,45 +95,63 @@ for (var i=0;i<inputs.length;i++) {
                                    | |
                                    |_|
  */
+function beforeOpenAnimation(){
+    beforeAnimation();
+    changeInput();
 
-function beforeAnimation(){
-    changePerspective();
+}
+function beforeCloseAnimation(){
+    beforeAnimation();
 
 
 }
 
+function beforeAnimation(){
+    changePerspective();
+}
+
+var saveClass = {};
 //event click open
+var launchOpen = panel.getElementsByClassName("launch-open")[0];
 launchOpen.addEventListener("click",function(){
-    beforeAnimation();
-    panel.setAttribute("style","display:none;");
-    panelLeft.setAttribute("style","display:block;");
-    panelRight.setAttribute("style","display:block;");
+    beforeOpenAnimation();
+    panel.style.display = 'none';
+    panelLeft.style.display = 'block';
+    panelRight.style.display = 'block';
 
     setTimeout(function(){
+        saveClass["panel"] = panel.className;
+        saveClass["panelLeft"] = panelLeft.className;
+        saveClass["panelRight"] = panelRight.className;
+
         panel.className  = panel.className + " open";
         panelLeft.className = panelLeft.className + " open";
         panelRight.className = panelRight.className + " open";
     }, 1);
 
     setTimeout(function(){
+        saveClass["bodySite"] = bodySite.className;
         bodySite.className = bodySite.className + " open";
     }, 500);
 });
 
 
+
+
 //event click close
+var launchBack =  bodySite.getElementsByClassName("launch-back")[0];
 launchBack.addEventListener("click",function(){
-    beforeAnimation();
-    bodySite.className = " body-site";
+    beforeCloseAnimation();
+    bodySite.className  = saveClass["bodySite"] ;
     setTimeout(function(){
-        panel.className = "panel-openingPage";
-        panelLeft.className = "panel panelLeft";
-        panelRight.className =  "panel panelRight";
+        panel.className =  saveClass["panel"];
+        panelLeft.className =  saveClass["panelLeft"];
+        panelRight.className =  saveClass["panelRight"];
 
         setTimeout(function(){
-            panel.setAttribute("style","display:block;");
-            panelLeft.setAttribute("style","display:none;");
-            panelRight.setAttribute("style","display:none;");
+            panel.style.display = 'block';
+            panelLeft.style.display = 'none';
+            panelRight.style.display = 'none';
         }, 1000);
     }, 500);
 });
