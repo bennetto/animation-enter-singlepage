@@ -17,8 +17,19 @@ var panelRight= panel.cloneNode(true);
 panelRight.className = "panel panelRight";
 
 var openingPage = document.getElementsByClassName("openingPage")[0];
+
+var panelContent = panel.getElementsByClassName("content-panel")[0];
+var width = panelContent.offsetWidth;
+var height = panelContent.offsetHeight;
+
 panelLeft.setAttribute("style","display:none;");
-panelRight.setAttribute("style","display:none;"); 
+var panelLeftContent = panelLeft.getElementsByClassName("content-panel")[0];
+panelLeftContent.setAttribute("style","right:-"+width/2+"px;");
+
+panelRight.setAttribute("style","display:none;");
+var panelRightContent = panelRight.getElementsByClassName("content-panel")[0];
+panelRightContent.setAttribute("style","left:-"+width/2+"px;");
+
 openingPage.appendChild(panelLeft);
 openingPage.appendChild(panelRight);
 
@@ -89,6 +100,7 @@ for (var i=0;i<inputs.length;i++) {
 function beforeAnimation(){
     changePerspective();
 
+
 }
 
 //event click open
@@ -99,6 +111,7 @@ launchOpen.addEventListener("click",function(){
     panelRight.setAttribute("style","display:block;");
 
     setTimeout(function(){
+        panel.className  = panel.className + " open";
         panelLeft.className = panelLeft.className + " open";
         panelRight.className = panelRight.className + " open";
     }, 1);
@@ -114,6 +127,7 @@ launchBack.addEventListener("click",function(){
     beforeAnimation();
     bodySite.className = " body-site";
     setTimeout(function(){
+        panel.className = "panel-openingPage";
         panelLeft.className = "panel panelLeft";
         panelRight.className =  "panel panelRight";
 

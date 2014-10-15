@@ -1,18 +1,22 @@
 
 
-#containerGlobal{
-    height: 100%;
-    width: 100%;
+
+
+
+/*
+   _____            _             _          _____                 _
+  / ____|          | |           | |        |  __ \               | |
+ | |     ___  _ __ | |_ ___ _ __ | |_ ______| |__) |_ _ _ __   ___| |
+ | |    / _ \| '_ \| __/ _ \ '_ \| __|______|  ___/ _` | '_ \ / _ \ |
+ | |___| (_) | | | | ||  __/ | | | |_       | |  | (_| | | | |  __/ |
+  \_____\___/|_| |_|\__\___|_| |_|\__|      |_|   \__,_|_| |_|\___|_|
+*/
+.content-panel{ /*size of content*/
+    width: 500px;
+    height: 330px;
 }
 
 
-body{
-    height: 100%;
-    width: 100%;
-    background-color: #eeeeee;
-    margin: 0px;
-    padding: 0px;
-}
 
 
 /*
@@ -23,7 +27,6 @@ body{
  | |_) | |_| | |_| || (_) | | | |
  |____/ \__,_|\__|\__\___/|_| |_|
 */
-
 button{
     background: #10689a;
     border: none;
@@ -38,6 +41,13 @@ button{
     letter-spacing: 1px;
 }
 
+.content-panel .launch-open
+{
+    margin: 0px;
+    height: 50px;
+    width: 150px;
+}
+
 /*
   _______        _
  |__   __|      | |
@@ -46,9 +56,11 @@ button{
     | |  __/>  <| ||  __/
     |_|\___/_/\_\\__\___|
 */
+
 .textPanel{
     font-size: 80px;
     color: #eeeeee;
+    margin-bottom: 50px;
 }
 
 /*
