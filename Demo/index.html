@@ -5,10 +5,10 @@
   <title>Launcher</title>
 
   <link rel="stylesheet" href="styles.min.css">
-    <link rel="stylesheet" href="../src/css/animationOpening.min.css"> <!-- add css of lib -->
+    <link rel="stylesheet" href="../src/css/animationOpening.css"> <!-- add css of lib -->
 </head>
 <body>
-  <div id="containerGlobal"class="openingPage-doorAnimation">
+  <div class="containerGlobal openingPage-doorAnimation">
 
       <!-- Enter page -->
     <div class="openingPage">
@@ -16,7 +16,7 @@
             <!--Begin customizable -->
             <div class="content-panel"> <!-- optional : if you want center content -->
                 <div class="textPanel">Nom du Site :</div>
-                 <form action="javascript:openOpeningPage();">
+                 <form action="javascript:openingAnimationPage.openOpeningPage();">
                     <input type="text" id="login" class="input-login" name="login" placeholder="Login">
                     <input type="password" id="password" class="input-password" name="password" placeholder="Password">
                     <button class=" ">Login</button>

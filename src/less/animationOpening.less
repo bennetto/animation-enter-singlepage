@@ -151,18 +151,12 @@ body{
 
   /* BODY */
   .body-site{
-    .scale(0.5,0.5);
-    .transition(all 1s ease);
-  }
 
-  .body-site.open{
-    z-index: 500;
-    .scale(1,1);
   }
 
   /* CENTER*/
   .panel{
-    .transition(1s ease);
+
   }
 
   /* LEFT */
@@ -170,15 +164,125 @@ body{
     .transform-origin( left);
   }
 
-  .panelLeft.open{
-    .rotate3d(0,1,0,90deg);
-  }
-
   /* RIGHT */
   .panelRight{
     .transform-origin(right);
   }
-  .panelRight.open{
-    .rotate3d(0,1,0,-90deg);
+
+
+}
+
+.openingPage-doorAnimation.open{
+
+  .body-site{
+    .animation( bodyAnimationDoorOpen 2s ease );
+    .animation-fill-mode(forwards);
+   // z-index: 500;
+   // .scale(1,1);
   }
+
+  .panelRight{
+    .animation( rightAnimationDoorOpen 2s ease );
+    .animation-fill-mode(forwards);
+  }
+
+  .panelLeft{
+    .animation( leftAnimationDoorOpen 2s ease );
+    .animation-fill-mode(forwards);
+  }
+}
+
+.openingPage-doorAnimation.close{
+  .body-site{
+    .animation( bodyAnimationDoorClose 2s ease );
+    .animation-fill-mode(forwards);
+  }
+
+  .panelLeft{
+    .animation( leftAnimationDoorClose 2s ease );
+    .animation-fill-mode(forwards);
+  }
+  .panelRight{
+    .animation( rightAnimationDoorClose 2s ease );
+    .animation-fill-mode(forwards);
+  }
+}
+
+//keyframes
+
+
+/*BODY*/
+@-webkit-keyframes bodyAnimationDoorOpen {.bodyAnimationDoorOpenF;}
+@-moz-keyframes bodyAnimationDoorOpen {.bodyAnimationDoorOpenF;}
+@-ms-keyframes bodyAnimationDoorOpen {.bodyAnimationDoorOpenF;}
+@-o-keyframes bodyAnimationDoorOpen {.bodyAnimationDoorOpenF;}
+@keyframes bodyAnimationDoorOpen {.bodyAnimationDoorOpenF;}
+
+.bodyAnimationDoorOpenF () {
+  0%   { .scale(0.5,0.5); z-index: 0;}
+  50%   { .scale(0.5,0.5); z-index: 0;}
+  100%   {  .scale(1,1);z-index: 500;  }
+}
+
+@-webkit-keyframes bodyAnimationDoorClose {.bodyAnimationDoorCloseF;}
+@-moz-keyframes bodyAnimationDoorClose {.bodyAnimationDoorCloseF;}
+@-ms-keyframes bodyAnimationDoorClose {.bodyAnimationDoorCloseF;}
+@-o-keyframes bodyAnimationDoorClose {.bodyAnimationDoorCloseF;}
+@keyframes bodyAnimationDoorClose {.bodyAnimationDoorCloseF;}
+
+.bodyAnimationDoorCloseF () {
+  0%   { .scale(1,1); z-index: 500;}
+  50%   { .scale(0.5,0.5); z-index: 0;}
+  100%   {  .scale(0.5,0.5);z-index: 0; }
+}
+
+/* LEFT */
+
+@-webkit-keyframes leftAnimationDoorOpen {.leftAnimationDoorOpenF;}
+@-moz-keyframes leftAnimationDoorOpen {.leftAnimationDoorOpenF;}
+@-ms-keyframes leftAnimationDoorOpen {.leftAnimationDoorOpenF;}
+@-o-keyframes leftAnimationDoorOpen {.leftAnimationDoorOpenF;}
+@keyframes leftAnimationDoorOpen {.leftAnimationDoorOpenF;}
+
+.leftAnimationDoorOpenF () {
+  0% {.rotate3d(0, 1, 0, 0deg);  }
+  50% {    .rotate3d(0, 1, 0, 90deg);  }
+  100% {    .rotate3d(0, 1, 0, 90deg);  }
+}
+
+@-webkit-keyframes leftAnimationDoorClose {.leftAnimationDoorCloseF;}
+@-moz-keyframes leftAnimationDoorClose {.leftAnimationDoorCloseF;}
+@-ms-keyframes leftAnimationDoorClose {.leftAnimationDoorCloseF;}
+@-o-keyframes leftAnimationDoorClose {.leftAnimationDoorCloseF;}
+@keyframes leftAnimationDoorClose {.leftAnimationDoorCloseF;}
+
+.leftAnimationDoorCloseF () {
+  0%   { .rotate3d(0,1,0,90deg);  }
+  50%   { .rotate3d(0,1,0,90deg);  }
+  100%   { .rotate3d(0,1,0,0deg);  }
+}
+
+/* RIGHT */
+@-webkit-keyframes rightAnimationDoorOpen {.rightAnimationDoorOpenF;}
+@-moz-keyframes rightAnimationDoorOpen {.rightAnimationDoorOpenF;}
+@-ms-keyframes rightAnimationDoorOpen {.rightAnimationDoorOpenF;}
+@-o-keyframes rightAnimationDoorOpen {.rightAnimationDoorOpenF;}
+@keyframes rightAnimationDoorOpen {.rightAnimationDoorOpenF;}
+
+.rightAnimationDoorOpenF () {
+  0%   { .rotate3d(0,1,0,0deg);  }
+  50%   { .rotate3d(0,1,0,-90deg); }
+  100%   { .rotate3d(0,1,0,-90deg);  }
+}
+
+@-webkit-keyframes rightAnimationDoorClose {.rightAnimationDoorCloseF;}
+@-moz-keyframes rightAnimationDoorClose {.rightAnimationDoorCloseF;}
+@-ms-keyframes rightAnimationDoorClose {.rightAnimationDoorCloseF;}
+@-o-keyframes rightAnimationDoorClose {.rightAnimationDoorCloseF;}
+@keyframes rightAnimationDoorClose {.rightAnimationDoorCloseF;}
+
+.rightAnimationDoorCloseF () {
+  0%   { .rotate3d(0,1,0,-90deg);  }
+  50%   { .rotate3d(0,1,0,-90deg);  }
+  100%   { .rotate3d(0,1,0,0deg);  }
 }
