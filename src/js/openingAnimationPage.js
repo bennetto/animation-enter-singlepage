@@ -135,9 +135,10 @@ var openOpeningPage = function(){
         bodySite.className = bodySite.className + " open";
     }, 500);
 };
-var launchOpen = pane.lgetElementsByClassName("launch-open")[0];
-launchOpen.addEventListener("click",openOpeningPage);
-
+var launchOpen = panel.getElementsByClassName("launch-open")[0];
+if(launchOpen) {
+    launchOpen.addEventListener("click", openOpeningPage);
+}
 
 //event click close
 
@@ -158,4 +159,6 @@ var closeOpeningPage = function(){
     }, 500);
 };
 var launchBack =  bodySite.getElementsByClassName("launch-back")[0];
-launchBack.addEventListener("click",closeOpeningPage);
+if(launchBack) {
+    launchBack.addEventListener("click", closeOpeningPage);
+}

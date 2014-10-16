@@ -36,14 +36,6 @@ body{
   width: 100%;
   height: 100%;
   overflow: hidden;
-
-  .scale(0.5,0.5);
-  .transition(all 1s ease);
-}
-
-.body-site.open{
-  z-index: 500;
-  .scale(1,1);
 }
 
 
@@ -89,38 +81,24 @@ body{
   text-align: center;
   overflow: hidden;
   background-color: @default-color-openingPage;
-  .transition(1s ease);
-
 }
 
 .panel-openingPage{
   width: 100%;
 }
 
-
 /* RIGHT */
 .panelRight{
   width: 50%;
   right:0px;
-
-  .transform-origin(right);
-}
-
-.panelRight.open{
-  .rotate3d(0,1,0,-90deg);
 }
 
 /* LEFT */
 .panelLeft{
   width: 50%;
   left:0px;
-
-  .transform-origin( left);
 }
 
-.panelLeft.open{
-  .rotate3d(0,1,0,90deg);
-}
 
 
 /*
@@ -147,4 +125,60 @@ body{
   margin-top:auto;
   margin-bottom:auto;
   text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+  _____                                _                 _   _
+ |  __ \                   /\         (_)               | | (_)
+ | |  | | ___   ___  _ __ /  \   _ __  _ _ __ ___   __ _| |_ _  ___  _ __
+ | |  | |/ _ \ / _ \| '__/ /\ \ | '_ \| | '_ ` _ \ / _` | __| |/ _ \| '_ \
+ | |__| | (_) | (_) | | / ____ \| | | | | | | | | | (_| | |_| | (_) | | | |
+ |_____/ \___/ \___/|_|/_/    \_\_| |_|_|_| |_| |_|\__,_|\__|_|\___/|_| |_|
+*/
+
+.openingPage-doorAnimation{
+
+  /* BODY */
+  .body-site{
+    .scale(0.5,0.5);
+    .transition(all 1s ease);
+  }
+
+  .body-site.open{
+    z-index: 500;
+    .scale(1,1);
+  }
+
+  /* CENTER*/
+  .panel{
+    .transition(1s ease);
+  }
+
+  /* LEFT */
+  .panelLeft{
+    .transform-origin( left);
+  }
+
+  .panelLeft.open{
+    .rotate3d(0,1,0,90deg);
+  }
+
+  /* RIGHT */
+  .panelRight{
+    .transform-origin(right);
+  }
+  .panelRight.open{
+    .rotate3d(0,1,0,-90deg);
+  }
 }
