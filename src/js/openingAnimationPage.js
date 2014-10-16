@@ -34,7 +34,8 @@ openingPage.appendChild(panelRight);
 
 
 var bodySite = document.getElementsByClassName("body-site")[0];
-
+var saveDisplayBody = bodySite.style.display;
+bodySite.style.display = "none";
 
 /*
   _____                              _   _
@@ -110,9 +111,11 @@ function beforeAnimation(){
 
 var saveClass = {};
 //event click open
-var launchOpen = panel.getElementsByClassName("launch-open")[0];
-launchOpen.addEventListener("click",function(){
+
+
+var openOpeningPage = function(){
     beforeOpenAnimation();
+    bodySite.style.display = saveDisplayBody;
     panel.style.display = 'none';
     panelLeft.style.display = 'block';
     panelRight.style.display = 'block';
@@ -131,14 +134,14 @@ launchOpen.addEventListener("click",function(){
         saveClass["bodySite"] = bodySite.className;
         bodySite.className = bodySite.className + " open";
     }, 500);
-});
-
-
+};
+var launchOpen = pane.lgetElementsByClassName("launch-open")[0];
+launchOpen.addEventListener("click",openOpeningPage);
 
 
 //event click close
-var launchBack =  bodySite.getElementsByClassName("launch-back")[0];
-launchBack.addEventListener("click",function(){  // change for login sucess and error
+
+var closeOpeningPage = function(){
     beforeCloseAnimation();
     bodySite.className  = saveClass["bodySite"] ;
     setTimeout(function(){
@@ -150,6 +153,9 @@ launchBack.addEventListener("click",function(){  // change for login sucess and 
             panel.style.display = 'block';
             panelLeft.style.display = 'none';
             panelRight.style.display = 'none';
+            bodySite.style.display = "none";
         }, 1000);
     }, 500);
-});
+};
+var launchBack =  bodySite.getElementsByClassName("launch-back")[0];
+launchBack.addEventListener("click",closeOpeningPage);
