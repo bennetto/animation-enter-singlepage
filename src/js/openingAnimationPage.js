@@ -59,10 +59,8 @@ var openingAnimationPage = new function() {
         openingPage.setAttribute("style", " -webkit-perspective: " + width + ";-moz-perspective: " + width + ";-o-perspective: " + width + ";perspective: " + width + ";");
         if (width % 2 != 0) {
             panelLeft.style.width = "50.1%";
-            panelRight.style.width = "50.1%";
         } else {
             panelLeft.style.width = "50%";
-            panelRight.style.width = "50%";
         }
     }
 
@@ -122,13 +120,11 @@ var openingAnimationPage = new function() {
     this.openOpeningPage = function () {
         beforeOpenAnimation();
         bodySite.style.display = saveDisplayBody;
-        panel.style.display = 'none';
+
         panelLeft.style.display = 'block';
         panelRight.style.display = 'block';
-
-        setTimeout(function () {
-            containerGlobal.className = containerGlobalClassSave + " open";
-        }, 1);
+        panel.style.display = 'none';
+        containerGlobal.className = containerGlobalClassSave + " open";
 
     };
     var launchOpen = panel.getElementsByClassName("launch-open")[0];
@@ -141,6 +137,13 @@ var openingAnimationPage = new function() {
     this.closeOpeningPage = function () {
         beforeCloseAnimation();
         containerGlobal.className = containerGlobalClassSave + " close";
+        setTimeout(function () {
+            bodySite.style.display = "none";
+            panel.style.display = 'block';
+            panelLeft.style.display = 'none';
+            panelRight.style.display = 'none';
+        }, 2000);
+
     };
     var launchBack = bodySite.getElementsByClassName("launch-back")[0];
     if (launchBack) {

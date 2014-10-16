@@ -128,16 +128,6 @@ body{
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /*
   _____                                _                 _   _
  |  __ \                   /\         (_)               | | (_)
@@ -148,44 +138,35 @@ body{
 */
 
 .openingPage-doorAnimation{
-
   /* BODY */
   .body-site{
-
   }
-
   /* CENTER*/
   .panel{
-
   }
-
   /* LEFT */
   .panelLeft{
     .transform-origin( left);
   }
-
   /* RIGHT */
   .panelRight{
     .transform-origin(right);
   }
-
-
 }
 
 .openingPage-doorAnimation.open{
-
   .body-site{
     .animation( bodyAnimationDoorOpen 2s ease );
     .animation-fill-mode(forwards);
-   // z-index: 500;
-   // .scale(1,1);
   }
-
+  .panel-openingPage{
+    .animation( centerAnimationDoorOpen 2s ease );
+    .animation-fill-mode(forwards);
+  }
   .panelRight{
     .animation( rightAnimationDoorOpen 2s ease );
     .animation-fill-mode(forwards);
   }
-
   .panelLeft{
     .animation( leftAnimationDoorOpen 2s ease );
     .animation-fill-mode(forwards);
@@ -197,7 +178,10 @@ body{
     .animation( bodyAnimationDoorClose 2s ease );
     .animation-fill-mode(forwards);
   }
-
+  .panel-openingPage{
+    .animation( centerAnimationDoorClose 2s ease );
+    .animation-fill-mode(forwards);
+  }
   .panelLeft{
     .animation( leftAnimationDoorClose 2s ease );
     .animation-fill-mode(forwards);
@@ -207,9 +191,6 @@ body{
     .animation-fill-mode(forwards);
   }
 }
-
-//keyframes
-
 
 /*BODY*/
 @-webkit-keyframes bodyAnimationDoorOpen {.bodyAnimationDoorOpenF;}
@@ -236,8 +217,9 @@ body{
   100%   {  .scale(0.5,0.5);z-index: 0; }
 }
 
-/* LEFT */
 
+
+/* LEFT */
 @-webkit-keyframes leftAnimationDoorOpen {.leftAnimationDoorOpenF;}
 @-moz-keyframes leftAnimationDoorOpen {.leftAnimationDoorOpenF;}
 @-ms-keyframes leftAnimationDoorOpen {.leftAnimationDoorOpenF;}
@@ -245,10 +227,11 @@ body{
 @keyframes leftAnimationDoorOpen {.leftAnimationDoorOpenF;}
 
 .leftAnimationDoorOpenF () {
-  0% {.rotate3d(0, 1, 0, 0deg);  }
-  50% {    .rotate3d(0, 1, 0, 90deg);  }
-  100% {    .rotate3d(0, 1, 0, 90deg);  }
+  0% { .rotate3d(0, 1, 0, 0deg); }
+  50% {    .rotate3d(0, 1, 0, 90deg); }
+  100% {    .rotate3d(0, 1, 0, 90deg) ; }
 }
+
 
 @-webkit-keyframes leftAnimationDoorClose {.leftAnimationDoorCloseF;}
 @-moz-keyframes leftAnimationDoorClose {.leftAnimationDoorCloseF;}
@@ -257,9 +240,9 @@ body{
 @keyframes leftAnimationDoorClose {.leftAnimationDoorCloseF;}
 
 .leftAnimationDoorCloseF () {
-  0%   { .rotate3d(0,1,0,90deg);  }
+  0%   { .rotate3d(0,1,0,90deg); }
   50%   { .rotate3d(0,1,0,90deg);  }
-  100%   { .rotate3d(0,1,0,0deg);  }
+  100%   { .rotate3d(0,1,0,0deg); }
 }
 
 /* RIGHT */

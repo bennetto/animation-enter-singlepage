@@ -135,6 +135,18 @@ body {
   -o-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
+.openingPage-doorAnimation.open .panel-openingPage {
+  -webkit-animation: centerAnimationDoorOpen 2s ease;
+  -moz-animation: centerAnimationDoorOpen 2s ease;
+  -ms-animation: centerAnimationDoorOpen 2s ease;
+  -o-animation: centerAnimationDoorOpen 2s ease;
+  animation: centerAnimationDoorOpen 2s ease;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
 .openingPage-doorAnimation.open .panelRight {
   -webkit-animation: rightAnimationDoorOpen 2s ease;
   -moz-animation: rightAnimationDoorOpen 2s ease;
@@ -165,6 +177,18 @@ body {
   -ms-animation: bodyAnimationDoorClose 2s ease;
   -o-animation: bodyAnimationDoorClose 2s ease;
   animation: bodyAnimationDoorClose 2s ease;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.openingPage-doorAnimation.close .panel-openingPage {
+  -webkit-animation: centerAnimationDoorClose 2s ease;
+  -moz-animation: centerAnimationDoorClose 2s ease;
+  -ms-animation: centerAnimationDoorClose 2s ease;
+  -o-animation: centerAnimationDoorClose 2s ease;
+  animation: centerAnimationDoorClose 2s ease;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   -ms-animation-fill-mode: forwards;
