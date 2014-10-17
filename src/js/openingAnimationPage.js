@@ -1,6 +1,3 @@
-
-
-
 var openingAnimationPage = new function() {
     var _self = this;
 
@@ -8,8 +5,6 @@ var openingAnimationPage = new function() {
         var reg = new RegExp(" " + className + " ");
         return reg.test(' ' + obj.className + ' ');
     }
-
-
 
     /*
       _____                _   _
@@ -27,10 +22,6 @@ var openingAnimationPage = new function() {
     var openingPage = containerGlobal.getElementsByClassName("openingPage")[0];
     var panel = openingPage.getElementsByClassName("panel-openingPage")[0];
 
-//calcul size panelContent
-    var panelContent = panel.getElementsByClassName("content-panel")[0];
-    var width = panelContent.offsetWidth;
-    var height = panelContent.offsetHeight;
 
     var panelVisible ={};
     panelVisible.initPanel = true;
@@ -43,25 +34,9 @@ var openingAnimationPage = new function() {
         panelVisible.perpective = true;
     }
 
-    //create panel Left
-    if( panelVisible.left) {
-        var panelLeft = panel.cloneNode(true);
-        panelLeft.className = "panel panelLeft";
-        panelLeft.setAttribute("style", "display:none;");
-        var panelLeftContent = panelLeft.getElementsByClassName("content-panel")[0];
-        panelLeftContent.style.right = -width / 2 + "px";
-        openingPage.appendChild(panelLeft);
-    }
+    var panelLeft;
+    var panelRight;
 
-    //create panel right
-    if( panelVisible.right) {
-        var panelRight = panel.cloneNode(true);
-        panelRight.className = "panel panelRight";
-        panelRight.setAttribute("style", "display:none;");
-        var panelRightContent = panelRight.getElementsByClassName("content-panel")[0];
-        panelRightContent.style.left = -width / 2 + "px";
-        openingPage.appendChild(panelRight);
-    }
     var bodySite = document.getElementsByClassName("body-site")[0];
     var saveDisplayBody = bodySite.style.display;
     bodySite.style.display = "none";
@@ -81,11 +56,13 @@ var openingAnimationPage = new function() {
             var width = openingPage.offsetWidth;
 
             openingPage.setAttribute("style", " -webkit-perspective: " + width + ";-moz-perspective: " + width + ";-o-perspective: " + width + ";perspective: " + width + ";");
-            if (width % 2 != 0) {
-                panelLeft.style.width = "50.1%";
-            } else {
-                panelLeft.style.width = "50%";
-            }
+           if(panelLeft) {
+               if (width % 2 != 0) {
+                   panelLeft.style.width = "50.1%";
+               } else {
+                   panelLeft.style.width = "50%";
+               }
+           }
         }
     }
 
@@ -126,7 +103,38 @@ var openingAnimationPage = new function() {
      | |
      |_|
      */
+
+    var creationPanel = function(){
+        //calcul size panelContent
+        var panelContent = panel.getElementsByClassName("content-panel")[0];
+        var width = panelContent.offsetWidth;
+        var height = panelContent.offsetHeight;
+
+
+        //create panel Left
+        if( !panelLeft && panelVisible.left) {
+            panelLeft = panel.cloneNode(true);
+            panelLeft.className = "panel panelLeft";
+            panelLeft.setAttribute("style", "display:none;");
+            var panelLeftContent = panelLeft.getElementsByClassName("content-panel")[0];
+            panelLeftContent.style.right = -width / 2 + "px";
+            openingPage.appendChild(panelLeft);
+        }
+
+        //create panel right
+        if( !panelRight &&panelVisible.right) {
+            panelRight = panel.cloneNode(true);
+            panelRight.className = "panel panelRight";
+            panelRight.setAttribute("style", "display:none;");
+            var panelRightContent = panelRight.getElementsByClassName("content-panel")[0];
+            panelRightContent.style.left = -width / 2 + "px";
+            openingPage.appendChild(panelRight);
+        }
+    };
+
+
     function beforeOpenAnimation() {
+        creationPanel();
         beforeAnimation();
         changeInput();
 
