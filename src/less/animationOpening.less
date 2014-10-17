@@ -22,11 +22,13 @@ body{
   background-color: @default-color-backgroudApp;
   margin: 0px;
   padding: 0px;
+  overflow: hidden;
 }
 
-#containerGlobal{
+.containerGlobal{
   height: 100%;
   width: 100%;
+
 }
 
 
@@ -55,7 +57,7 @@ body{
   height: 100%;
   width: 100%;
   position: absolute;
-  z-index: 100;
+
 }
 
 
@@ -138,6 +140,9 @@ body{
 */
 
 .openingPage-doorAnimation{
+  .openingPage{
+    z-index: 100;
+  }
   /* BODY */
   .body-site{}
   /* CENTER*/
@@ -154,38 +159,38 @@ body{
 //open
 .openingPage-doorAnimation.open{
   .body-site{
-    .animation( bodyAnimationDoorOpen 2s ease );
+    .animation( bodyAnimationDoorOpen 2s ease both );
     .animation-fill-mode(forwards);
   }
   .panel-openingPage{
-    .animation( centerAnimationDoorOpen 2s ease );
+    .animation( centerAnimationDoorOpen 2s ease both);
     .animation-fill-mode(forwards);
   }
   .panelRight{
-    .animation( rightAnimationDoorOpen 2s ease );
+    .animation( rightAnimationDoorOpen 2s ease both);
     .animation-fill-mode(forwards);
   }
   .panelLeft{
-    .animation( leftAnimationDoorOpen 2s ease );
+    .animation( leftAnimationDoorOpen 2s ease both);
     .animation-fill-mode(forwards);
   }
 }
 //close
 .openingPage-doorAnimation.close{
   .body-site{
-    .animation( bodyAnimationDoorClose 2s ease );
+    .animation( bodyAnimationDoorClose 2s ease both);
     .animation-fill-mode(forwards);
   }
   .panel-openingPage{
-    .animation( centerAnimationDoorClose 2s ease );
+    .animation( centerAnimationDoorClose 2s ease both);
     .animation-fill-mode(forwards);
   }
   .panelLeft{
-    .animation( leftAnimationDoorClose 2s ease );
+    .animation( leftAnimationDoorClose 2s ease both);
     .animation-fill-mode(forwards);
   }
   .panelRight{
-    .animation( rightAnimationDoorClose 2s ease );
+    .animation( rightAnimationDoorClose 2s ease both );
     .animation-fill-mode(forwards);
   }
 }
@@ -266,4 +271,89 @@ body{
   0%   { .rotate3d(0,1,0,-90deg);  }
   35%   { .rotate3d(0,1,0,-90deg);  }
   100%   { .rotate3d(0,1,0,0deg);  }
+}
+
+
+/*
+  __  __
+ |  \/  |
+ | \  / | _____   _____
+ | |\/| |/ _ \ \ / / _ \
+ | |  | | (_) \ V /  __/
+ |_|  |_|\___/ \_/ \___|
+*/
+
+.openingPage-moveAnimation{
+  /* BODY */
+  .body-site{}
+  /* CENTER*/
+  .panel{}
+}
+//open
+.openingPage-moveAnimation.open{
+  .body-site{
+    .animation( bodyAnimationMoveOpen 2s ease both );
+    .animation-fill-mode(forwards);
+  }
+  .panel-openingPage{
+    .animation( centerAnimationMoveOpen 2s ease both);
+    .animation-fill-mode(forwards);
+  }
+}
+//close
+.openingPage-moveAnimation.close{
+  .body-site{
+    .animation( bodyAnimationMoveClose 2s ease both);
+    .animation-fill-mode(forwards);
+  }
+  .panel-openingPage{
+    .animation( centerAnimationMoveClose 2s ease both);
+    .animation-fill-mode(forwards);
+  }
+}
+
+/*BODY*/
+@-webkit-keyframes bodyAnimationMoveOpen {.bodyAnimationMoveOpenF;}
+@-moz-keyframes bodyAnimationMoveOpen {.bodyAnimationMoveOpenF;}
+@-ms-keyframes bodyAnimationMoveOpen {.bodyAnimationMoveOpenF;}
+@-o-keyframes bodyAnimationMoveOpen {.bodyAnimationMoveOpenF;}
+@keyframes bodyAnimationMoveOpen {.bodyAnimationMoveOpenF;}
+
+.bodyAnimationMoveOpenF () {
+  0%   { .translate(-100%,0)}
+  100%   {  .translate(0,0) }
+}
+
+@-webkit-keyframes bodyAnimationMoveClose {.bodyAnimationMoveCloseF;}
+@-moz-keyframes bodyAnimationMoveClose {.bodyAnimationMoveCloseF;}
+@-ms-keyframes bodyAnimationMoveClose {.bodyAnimationMoveCloseF;}
+@-o-keyframes bodyAnimationMoveClose {.bodyAnimationMoveCloseF;}
+@keyframes bodyAnimationMoveClose {.bodyAnimationMoveCloseF;}
+
+.bodyAnimationMoveCloseF () {
+  0%   { .translate(0,0)}
+  100%   {  .translate(-100%,0) }
+}
+
+/*CENTER*/
+@-webkit-keyframes centerAnimationMoveOpen {.centerAnimationMoveOpenF;}
+@-moz-keyframes centerAnimationMoveOpen {.centerAnimationMoveOpenF;}
+@-ms-keyframes centerAnimationMoveOpen {.centerAnimationMoveOpenF;}
+@-o-keyframes centerAnimationMoveOpen {.centerAnimationMoveOpenF;}
+@keyframes centerAnimationMoveOpen {.centerAnimationMoveOpenF;}
+
+.centerAnimationMoveOpenF () {
+  0%   { .translate(0,0)}
+  100%   {  .translate(100%,0) }
+}
+
+@-webkit-keyframes centerAnimationMoveClose {.centerAnimationMoveCloseF;}
+@-moz-keyframes centerAnimationMoveClose {.centerAnimationMoveCloseF;}
+@-ms-keyframes centerAnimationMoveClose {.centerAnimationMoveCloseF;}
+@-o-keyframes centerAnimationMoveClose {.centerAnimationMoveCloseF;}
+@keyframes centerAnimationMoveClose {.centerAnimationMoveCloseF;}
+
+.centerAnimationMoveCloseF () {
+  0%   { .translate(100%,0)}
+  100%   {  .translate(0,0) }
 }

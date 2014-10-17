@@ -40,6 +40,7 @@ var openingAnimationPage = new function() {
         panelVisible.initPanel = false;
         panelVisible.left = true;
         panelVisible.right = true;
+        panelVisible.perpective = true;
     }
 
     //create panel Left
@@ -76,13 +77,15 @@ var openingAnimationPage = new function() {
      |_|
      */
     function changePerspective() {
-        var width = openingPage.offsetWidth;
+        if(panelVisible.perpective) {
+            var width = openingPage.offsetWidth;
 
-        openingPage.setAttribute("style", " -webkit-perspective: " + width + ";-moz-perspective: " + width + ";-o-perspective: " + width + ";perspective: " + width + ";");
-        if (width % 2 != 0) {
-            panelLeft.style.width = "50.1%";
-        } else {
-            panelLeft.style.width = "50%";
+            openingPage.setAttribute("style", " -webkit-perspective: " + width + ";-moz-perspective: " + width + ";-o-perspective: " + width + ";perspective: " + width + ";");
+            if (width % 2 != 0) {
+                panelLeft.style.width = "50.1%";
+            } else {
+                panelLeft.style.width = "50%";
+            }
         }
     }
 
@@ -150,6 +153,10 @@ var openingAnimationPage = new function() {
         if( panelRight) { panelRight.style.display = 'block';}
         if(!panelVisible.initPanel) { panel.style.display = 'none'; }
         containerGlobal.className = containerGlobalClassSave + " open";
+
+        setTimeout(function () {
+            if(!panelVisible.initPanel) { panel.style.display = 'none';}
+        }, 2000);
 
     };
     var launchOpen = panel.getElementsByClassName("launch-open")[0];

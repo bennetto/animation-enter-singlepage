@@ -13,8 +13,9 @@ body {
   background-color: #eeeeee;
   margin: 0px;
   padding: 0px;
+  overflow: hidden;
 }
-#containerGlobal {
+.containerGlobal {
   height: 100%;
   width: 100%;
 }
@@ -39,7 +40,6 @@ body {
   height: 100%;
   width: 100%;
   position: absolute;
-  z-index: 100;
 }
 /*
   _____                 _
@@ -109,6 +109,9 @@ body {
   /* LEFT */
   /* RIGHT */
 }
+.openingPage-doorAnimation .openingPage {
+  z-index: 100;
+}
 .openingPage-doorAnimation .panelLeft {
   -webkit-transform-origin: left;
   -moz-transform-origin: left;
@@ -124,11 +127,11 @@ body {
   transform-origin: right;
 }
 .openingPage-doorAnimation.open .body-site {
-  -webkit-animation: bodyAnimationDoorOpen 2s ease;
-  -moz-animation: bodyAnimationDoorOpen 2s ease;
-  -ms-animation: bodyAnimationDoorOpen 2s ease;
-  -o-animation: bodyAnimationDoorOpen 2s ease;
-  animation: bodyAnimationDoorOpen 2s ease;
+  -webkit-animation: bodyAnimationDoorOpen 2s ease both;
+  -moz-animation: bodyAnimationDoorOpen 2s ease both;
+  -ms-animation: bodyAnimationDoorOpen 2s ease both;
+  -o-animation: bodyAnimationDoorOpen 2s ease both;
+  animation: bodyAnimationDoorOpen 2s ease both;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   -ms-animation-fill-mode: forwards;
@@ -136,11 +139,11 @@ body {
   animation-fill-mode: forwards;
 }
 .openingPage-doorAnimation.open .panel-openingPage {
-  -webkit-animation: centerAnimationDoorOpen 2s ease;
-  -moz-animation: centerAnimationDoorOpen 2s ease;
-  -ms-animation: centerAnimationDoorOpen 2s ease;
-  -o-animation: centerAnimationDoorOpen 2s ease;
-  animation: centerAnimationDoorOpen 2s ease;
+  -webkit-animation: centerAnimationDoorOpen 2s ease both;
+  -moz-animation: centerAnimationDoorOpen 2s ease both;
+  -ms-animation: centerAnimationDoorOpen 2s ease both;
+  -o-animation: centerAnimationDoorOpen 2s ease both;
+  animation: centerAnimationDoorOpen 2s ease both;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   -ms-animation-fill-mode: forwards;
@@ -148,11 +151,11 @@ body {
   animation-fill-mode: forwards;
 }
 .openingPage-doorAnimation.open .panelRight {
-  -webkit-animation: rightAnimationDoorOpen 2s ease;
-  -moz-animation: rightAnimationDoorOpen 2s ease;
-  -ms-animation: rightAnimationDoorOpen 2s ease;
-  -o-animation: rightAnimationDoorOpen 2s ease;
-  animation: rightAnimationDoorOpen 2s ease;
+  -webkit-animation: rightAnimationDoorOpen 2s ease both;
+  -moz-animation: rightAnimationDoorOpen 2s ease both;
+  -ms-animation: rightAnimationDoorOpen 2s ease both;
+  -o-animation: rightAnimationDoorOpen 2s ease both;
+  animation: rightAnimationDoorOpen 2s ease both;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   -ms-animation-fill-mode: forwards;
@@ -160,11 +163,11 @@ body {
   animation-fill-mode: forwards;
 }
 .openingPage-doorAnimation.open .panelLeft {
-  -webkit-animation: leftAnimationDoorOpen 2s ease;
-  -moz-animation: leftAnimationDoorOpen 2s ease;
-  -ms-animation: leftAnimationDoorOpen 2s ease;
-  -o-animation: leftAnimationDoorOpen 2s ease;
-  animation: leftAnimationDoorOpen 2s ease;
+  -webkit-animation: leftAnimationDoorOpen 2s ease both;
+  -moz-animation: leftAnimationDoorOpen 2s ease both;
+  -ms-animation: leftAnimationDoorOpen 2s ease both;
+  -o-animation: leftAnimationDoorOpen 2s ease both;
+  animation: leftAnimationDoorOpen 2s ease both;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   -ms-animation-fill-mode: forwards;
@@ -172,11 +175,11 @@ body {
   animation-fill-mode: forwards;
 }
 .openingPage-doorAnimation.close .body-site {
-  -webkit-animation: bodyAnimationDoorClose 2s ease;
-  -moz-animation: bodyAnimationDoorClose 2s ease;
-  -ms-animation: bodyAnimationDoorClose 2s ease;
-  -o-animation: bodyAnimationDoorClose 2s ease;
-  animation: bodyAnimationDoorClose 2s ease;
+  -webkit-animation: bodyAnimationDoorClose 2s ease both;
+  -moz-animation: bodyAnimationDoorClose 2s ease both;
+  -ms-animation: bodyAnimationDoorClose 2s ease both;
+  -o-animation: bodyAnimationDoorClose 2s ease both;
+  animation: bodyAnimationDoorClose 2s ease both;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   -ms-animation-fill-mode: forwards;
@@ -184,11 +187,11 @@ body {
   animation-fill-mode: forwards;
 }
 .openingPage-doorAnimation.close .panel-openingPage {
-  -webkit-animation: centerAnimationDoorClose 2s ease;
-  -moz-animation: centerAnimationDoorClose 2s ease;
-  -ms-animation: centerAnimationDoorClose 2s ease;
-  -o-animation: centerAnimationDoorClose 2s ease;
-  animation: centerAnimationDoorClose 2s ease;
+  -webkit-animation: centerAnimationDoorClose 2s ease both;
+  -moz-animation: centerAnimationDoorClose 2s ease both;
+  -ms-animation: centerAnimationDoorClose 2s ease both;
+  -o-animation: centerAnimationDoorClose 2s ease both;
+  animation: centerAnimationDoorClose 2s ease both;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   -ms-animation-fill-mode: forwards;
@@ -196,11 +199,11 @@ body {
   animation-fill-mode: forwards;
 }
 .openingPage-doorAnimation.close .panelLeft {
-  -webkit-animation: leftAnimationDoorClose 2s ease;
-  -moz-animation: leftAnimationDoorClose 2s ease;
-  -ms-animation: leftAnimationDoorClose 2s ease;
-  -o-animation: leftAnimationDoorClose 2s ease;
-  animation: leftAnimationDoorClose 2s ease;
+  -webkit-animation: leftAnimationDoorClose 2s ease both;
+  -moz-animation: leftAnimationDoorClose 2s ease both;
+  -ms-animation: leftAnimationDoorClose 2s ease both;
+  -o-animation: leftAnimationDoorClose 2s ease both;
+  animation: leftAnimationDoorClose 2s ease both;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   -ms-animation-fill-mode: forwards;
@@ -208,11 +211,11 @@ body {
   animation-fill-mode: forwards;
 }
 .openingPage-doorAnimation.close .panelRight {
-  -webkit-animation: rightAnimationDoorClose 2s ease;
-  -moz-animation: rightAnimationDoorClose 2s ease;
-  -ms-animation: rightAnimationDoorClose 2s ease;
-  -o-animation: rightAnimationDoorClose 2s ease;
-  animation: rightAnimationDoorClose 2s ease;
+  -webkit-animation: rightAnimationDoorClose 2s ease both;
+  -moz-animation: rightAnimationDoorClose 2s ease both;
+  -ms-animation: rightAnimationDoorClose 2s ease both;
+  -o-animation: rightAnimationDoorClose 2s ease both;
+  animation: rightAnimationDoorClose 2s ease both;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   -ms-animation-fill-mode: forwards;
@@ -940,5 +943,387 @@ body {
     -ms-transform: rotate3d(0, 1, 0, 0deg);
     -o-transform: rotate3d(0, 1, 0, 0deg);
     transform: rotate3d(0, 1, 0, 0deg);
+  }
+}
+/*
+  __  __
+ |  \/  |
+ | \  / | _____   _____
+ | |\/| |/ _ \ \ / / _ \
+ | |  | | (_) \ V /  __/
+ |_|  |_|\___/ \_/ \___|
+*/
+.openingPage-moveAnimation {
+  /* BODY */
+  /* CENTER*/
+}
+.openingPage-moveAnimation.open .body-site {
+  -webkit-animation: bodyAnimationMoveOpen 2s ease both;
+  -moz-animation: bodyAnimationMoveOpen 2s ease both;
+  -ms-animation: bodyAnimationMoveOpen 2s ease both;
+  -o-animation: bodyAnimationMoveOpen 2s ease both;
+  animation: bodyAnimationMoveOpen 2s ease both;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.openingPage-moveAnimation.open .panel-openingPage {
+  -webkit-animation: centerAnimationMoveOpen 2s ease both;
+  -moz-animation: centerAnimationMoveOpen 2s ease both;
+  -ms-animation: centerAnimationMoveOpen 2s ease both;
+  -o-animation: centerAnimationMoveOpen 2s ease both;
+  animation: centerAnimationMoveOpen 2s ease both;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.openingPage-moveAnimation.close .body-site {
+  -webkit-animation: bodyAnimationMoveClose 2s ease both;
+  -moz-animation: bodyAnimationMoveClose 2s ease both;
+  -ms-animation: bodyAnimationMoveClose 2s ease both;
+  -o-animation: bodyAnimationMoveClose 2s ease both;
+  animation: bodyAnimationMoveClose 2s ease both;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.openingPage-moveAnimation.close .panel-openingPage {
+  -webkit-animation: centerAnimationMoveClose 2s ease both;
+  -moz-animation: centerAnimationMoveClose 2s ease both;
+  -ms-animation: centerAnimationMoveClose 2s ease both;
+  -o-animation: centerAnimationMoveClose 2s ease both;
+  animation: centerAnimationMoveClose 2s ease both;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+/*BODY*/
+@-webkit-keyframes bodyAnimationMoveOpen {
+  0% {
+    -webkit-transform: translate(-100%, 0);
+    -moz-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    -o-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@-moz-keyframes bodyAnimationMoveOpen {
+  0% {
+    -webkit-transform: translate(-100%, 0);
+    -moz-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    -o-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@-ms-keyframes bodyAnimationMoveOpen {
+  0% {
+    -webkit-transform: translate(-100%, 0);
+    -moz-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    -o-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@-o-keyframes bodyAnimationMoveOpen {
+  0% {
+    -webkit-transform: translate(-100%, 0);
+    -moz-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    -o-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@keyframes bodyAnimationMoveOpen {
+  0% {
+    -webkit-transform: translate(-100%, 0);
+    -moz-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    -o-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@-webkit-keyframes bodyAnimationMoveClose {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-100%, 0);
+    -moz-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    -o-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+}
+@-moz-keyframes bodyAnimationMoveClose {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-100%, 0);
+    -moz-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    -o-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+}
+@-ms-keyframes bodyAnimationMoveClose {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-100%, 0);
+    -moz-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    -o-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+}
+@-o-keyframes bodyAnimationMoveClose {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-100%, 0);
+    -moz-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    -o-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+}
+@keyframes bodyAnimationMoveClose {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-100%, 0);
+    -moz-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    -o-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+}
+/*CENTER*/
+@-webkit-keyframes centerAnimationMoveOpen {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(100%, 0);
+    -moz-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    -o-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+}
+@-moz-keyframes centerAnimationMoveOpen {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(100%, 0);
+    -moz-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    -o-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+}
+@-ms-keyframes centerAnimationMoveOpen {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(100%, 0);
+    -moz-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    -o-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+}
+@-o-keyframes centerAnimationMoveOpen {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(100%, 0);
+    -moz-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    -o-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+}
+@keyframes centerAnimationMoveOpen {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(100%, 0);
+    -moz-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    -o-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+}
+@-webkit-keyframes centerAnimationMoveClose {
+  0% {
+    -webkit-transform: translate(100%, 0);
+    -moz-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    -o-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@-moz-keyframes centerAnimationMoveClose {
+  0% {
+    -webkit-transform: translate(100%, 0);
+    -moz-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    -o-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@-ms-keyframes centerAnimationMoveClose {
+  0% {
+    -webkit-transform: translate(100%, 0);
+    -moz-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    -o-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@-o-keyframes centerAnimationMoveClose {
+  0% {
+    -webkit-transform: translate(100%, 0);
+    -moz-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    -o-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+@keyframes centerAnimationMoveClose {
+  0% {
+    -webkit-transform: translate(100%, 0);
+    -moz-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    -o-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
   }
 }
