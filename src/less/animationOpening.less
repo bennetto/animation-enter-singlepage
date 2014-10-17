@@ -139,11 +139,9 @@ body{
 
 .openingPage-doorAnimation{
   /* BODY */
-  .body-site{
-  }
+  .body-site{}
   /* CENTER*/
-  .panel{
-  }
+  .panel{}
   /* LEFT */
   .panelLeft{
     .transform-origin( left);
@@ -153,7 +151,7 @@ body{
     .transform-origin(right);
   }
 }
-
+//open
 .openingPage-doorAnimation.open{
   .body-site{
     .animation( bodyAnimationDoorOpen 2s ease );
@@ -172,7 +170,7 @@ body{
     .animation-fill-mode(forwards);
   }
 }
-
+//close
 .openingPage-doorAnimation.close{
   .body-site{
     .animation( bodyAnimationDoorClose 2s ease );
@@ -201,7 +199,7 @@ body{
 
 .bodyAnimationDoorOpenF () {
   0%   { .scale(0.5,0.5); z-index: 0;}
-  50%   { .scale(0.5,0.5); z-index: 0;}
+  35%   { .scale(0.5,0.5); z-index: 0;}
   100%   {  .scale(1,1);z-index: 500;  }
 }
 
@@ -213,7 +211,7 @@ body{
 
 .bodyAnimationDoorCloseF () {
   0%   { .scale(1,1); z-index: 500;}
-  50%   { .scale(0.5,0.5); z-index: 0;}
+  65%   { .scale(0.5,0.5); z-index: 0;}
   100%   {  .scale(0.5,0.5);z-index: 0; }
 }
 
@@ -228,7 +226,7 @@ body{
 
 .leftAnimationDoorOpenF () {
   0% { .rotate3d(0, 1, 0, 0deg); }
-  50% {    .rotate3d(0, 1, 0, 90deg); }
+  65% {    .rotate3d(0, 1, 0, 90deg); }
   100% {    .rotate3d(0, 1, 0, 90deg) ; }
 }
 
@@ -241,7 +239,7 @@ body{
 
 .leftAnimationDoorCloseF () {
   0%   { .rotate3d(0,1,0,90deg); }
-  50%   { .rotate3d(0,1,0,90deg);  }
+  35%   { .rotate3d(0,1,0,90deg);  }
   100%   { .rotate3d(0,1,0,0deg); }
 }
 
@@ -254,7 +252,7 @@ body{
 
 .rightAnimationDoorOpenF () {
   0%   { .rotate3d(0,1,0,0deg);  }
-  50%   { .rotate3d(0,1,0,-90deg); }
+  65%   { .rotate3d(0,1,0,-90deg); }
   100%   { .rotate3d(0,1,0,-90deg);  }
 }
 
@@ -266,6 +264,6 @@ body{
 
 .rightAnimationDoorCloseF () {
   0%   { .rotate3d(0,1,0,-90deg);  }
-  50%   { .rotate3d(0,1,0,-90deg);  }
+  35%   { .rotate3d(0,1,0,-90deg);  }
   100%   { .rotate3d(0,1,0,0deg);  }
 }

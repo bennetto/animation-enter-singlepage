@@ -1,6 +1,16 @@
 
+
+
 var openingAnimationPage = new function() {
     var _self = this;
+
+    var hasClassName = function(obj,className){
+        var reg = new RegExp(" " + className + " ");
+        return reg.test(' ' + obj.className + ' ');
+    }
+
+
+
     /*
       _____                _   _
      / ____|              | | (_)
@@ -22,29 +32,41 @@ var openingAnimationPage = new function() {
     var width = panelContent.offsetWidth;
     var height = panelContent.offsetHeight;
 
-//create panel Left
-    var panelLeft = panel.cloneNode(true);
-    panelLeft.className = "panel panelLeft";
-    panelLeft.setAttribute("style", "display:none;");
-    var panelLeftContent = panelLeft.getElementsByClassName("content-panel")[0];
-    panelLeftContent.style.right = -width / 2 + "px";
-    openingPage.appendChild(panelLeft);
+    var panelVisible ={};
+    panelVisible.initPanel = true;
+    //configuration of display and create panel
+    if(hasClassName(containerGlobal,"openingPage-doorAnimation"))
+    {
+        panelVisible.initPanel = false;
+        panelVisible.left = true;
+        panelVisible.right = true;
+    }
 
-//create panel right
-    var panelRight = panel.cloneNode(true);
-    panelRight.className = "panel panelRight";
-    panelRight.setAttribute("style", "display:none;");
-    var panelRightContent = panelRight.getElementsByClassName("content-panel")[0];
-    panelRightContent.style.left = -width / 2 + "px";
-    openingPage.appendChild(panelRight);
+    //create panel Left
+    if( panelVisible.left) {
+        var panelLeft = panel.cloneNode(true);
+        panelLeft.className = "panel panelLeft";
+        panelLeft.setAttribute("style", "display:none;");
+        var panelLeftContent = panelLeft.getElementsByClassName("content-panel")[0];
+        panelLeftContent.style.right = -width / 2 + "px";
+        openingPage.appendChild(panelLeft);
+    }
 
-
+    //create panel right
+    if( panelVisible.right) {
+        var panelRight = panel.cloneNode(true);
+        panelRight.className = "panel panelRight";
+        panelRight.setAttribute("style", "display:none;");
+        var panelRightContent = panelRight.getElementsByClassName("content-panel")[0];
+        panelRightContent.style.left = -width / 2 + "px";
+        openingPage.appendChild(panelRight);
+    }
     var bodySite = document.getElementsByClassName("body-site")[0];
     var saveDisplayBody = bodySite.style.display;
     bodySite.style.display = "none";
 
     /*
-     _____                              _   _
+      _____                              _   _
      |  __ \                            | | (_)
      | |__) |__ _ __ ___ _ __   ___  ___| |_ ___   _____
      |  ___/ _ \ '__/ __| '_ \ / _ \/ __| __| \ \ / / _ \
@@ -65,14 +87,14 @@ var openingAnimationPage = new function() {
     }
 
     /*
-     _____ _                              _____                   _
+      _____ _                              _____                   _
      / ____| |                            |_   _|                 | |
      | |    | |__   __ _ _ __   __ _  ___    | |  _ __  _ __  _   _| |_
      | |    | '_ \ / _` | '_ \ / _` |/ _ \   | | | '_ \| '_ \| | | | __|
      | |____| | | | (_| | | | | (_| |  __/  _| |_| | | | |_) | |_| | |_
      \_____|_| |_|\__,_|_| |_|\__, |\___| |_____|_| |_| .__/ \__,_|\__|
-     _/ |                  | |
-     |___/                   |_|
+                                 _/ |                  | |
+                               |___/                   |_|
      */
 
 
@@ -81,14 +103,18 @@ var openingAnimationPage = new function() {
         for (var i = 0; i < inputs.length; i++) {
             var value = inputs[i].value;
             var classInput = inputs[i].classList;
-            panelLeft.getElementsByClassName(classInput)[0].value = value;
-            panelRight.getElementsByClassName(classInput)[0].value = value;
+            if( panelLeft) {
+                panelLeft.getElementsByClassName(classInput)[0].value = value;
+            }
+            if( panelRight) {
+                panelRight.getElementsByClassName(classInput)[0].value = value;
+            }
         }
     }
 
 
     /*
-     ______               _      ____
+      ______               _      ____
      |  ____|             | |    / __ \
      | |____   _____ _ __ | |_  | |  | |_ __   ___ _ __
      |  __\ \ / / _ \ '_ \| __| | |  | | '_ \ / _ \ '_ \
@@ -120,10 +146,9 @@ var openingAnimationPage = new function() {
     this.openOpeningPage = function () {
         beforeOpenAnimation();
         bodySite.style.display = saveDisplayBody;
-
-        panelLeft.style.display = 'block';
-        panelRight.style.display = 'block';
-        panel.style.display = 'none';
+        if( panelLeft) {panelLeft.style.display = 'block';}
+        if( panelRight) { panelRight.style.display = 'block';}
+        if(!panelVisible.initPanel) { panel.style.display = 'none'; }
         containerGlobal.className = containerGlobalClassSave + " open";
 
     };
@@ -139,9 +164,9 @@ var openingAnimationPage = new function() {
         containerGlobal.className = containerGlobalClassSave + " close";
         setTimeout(function () {
             bodySite.style.display = "none";
-            panel.style.display = 'block';
-            panelLeft.style.display = 'none';
-            panelRight.style.display = 'none';
+            if(!panelVisible.initPanel) { panel.style.display = 'block';}
+            if( panelLeft) {panelLeft.style.display = 'none';}
+            if( panelRight) {panelRight.style.display = 'none';}
         }, 2000);
 
     };
@@ -149,4 +174,5 @@ var openingAnimationPage = new function() {
     if (launchBack) {
         launchBack.addEventListener("click", _self.closeOpeningPage);
     }
+
 };
