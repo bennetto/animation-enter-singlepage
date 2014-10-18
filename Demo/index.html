@@ -4,11 +4,15 @@
 <head>
   <title>Launcher</title>
 
-  <link rel="stylesheet" href="styles.min.css">
+  <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lib/css/default.css">
+    <link rel="stylesheet" href="lib/css/multilevelmenu.css">
+    <link rel="stylesheet" href="lib/css/component.css">
     <link rel="stylesheet" href="../src/css/animationOpening.css"> <!-- add css of lib -->
+    <script src="lib/js/modernizr.custom.js"></script>
 </head>
 <body>
-  <div class="containerGlobal openingPage-moveAnimation">
+  <div class="containerGlobal openingPage-doorAnimation"><!--openingPage-moveAnimation, openingPage-doorAnimation -->
 
       <!-- Enter page -->
     <div class="openingPage">
@@ -16,9 +20,31 @@
             <!--Begin customizable -->
             <div class="content-panel"> <!-- optional : if you want center content -->
                 <div class="textPanel">Nom du Site :</div>
+                    <div id="dl-menu" class="dl-menuwrapper">
+                        <button class="dl-trigger">Choose a transition</button>
+                        <ul class="dl-menu">
+                            <li>
+                                <a href="#">Move</a>
+                                <ul class="dl-submenu">
+                                    <li data-animation="openingPage-moveAnimation"><a href="#">Move to left/ from right</a></li>
+                                    <li data-animation="openingPage-moveAnimation"><a href="#">Move to right/ from left</a></li>
+                                    <li data-animation="openingPage-moveAnimation"><a href="#">Move to top/ from bottom</a></li>
+                                    <li data-animation="openingPage-moveAnimation"><a href="#">Move to bottom/ from top</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Door</a>
+                                <ul class="dl-submenu">
+                                    <li data-animation="openingPage-doorAnimation"><a href="#">Horizontal Door</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                  <form action="javascript:openingAnimationPage.openOpeningPage();">
                     <input type="text" id="login" class="input-login" name="login" placeholder="Login">
                     <input type="password" id="password" class="input-password" name="password" placeholder="Password">
+
                     <button class=" ">Login</button>
                  </form>
             </div>
@@ -36,8 +62,35 @@
           <!--End -->
       </div>
   </div>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="lib/js/jquery.dlmenu.js"></script>
+  <!--<script src="lib/js/pagetransitions.js"></script>-->
   <script src="../src/js/openingAnimationPage.js"></script>  <!--Add lib at the end or after event document.ready-->
+<script>
+    animEndEventNames = {
+        'WebkitAnimation' : 'webkitAnimationEnd',
+        'OAnimation' : 'oAnimationEnd',
+        'msAnimation' : 'MSAnimationEnd',
+        'animation' : 'animationend'
+    },
+        // animation end event name
+            animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ],
+        // support css animations
+            support = Modernizr.cssanimations;
 
+    $( '#dl-menu' ).dlmenu( {
+        onLinkClick : function( el, ev ) {
+            ev.preventDefault();
+            $(".dl-trigger").html($(el[0]).find("a").html());
+            $(".dl-trigger")[0].setAttribute("data-animation",el[0].getAttribute("data-animation"));
+
+            $(".containerGlobal").attr( "class", "containerGlobal "+el[0].getAttribute("data-animation") );
+            openingAnimationPage.changeAnimation();
+            dlAnimation._closeMenu()
+        }
+    } );
+
+
+</script>
 </body>
 </html>

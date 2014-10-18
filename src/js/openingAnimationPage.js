@@ -15,24 +15,43 @@ var openingAnimationPage = new function() {
      \_____|_|  \___|\__,_|\__|_|\___/|_| |_|
      */
 
+    this.changeAnimation = function(){
+        containerGlobalClassSave = containerGlobal.className;
+        panelVisible ={};
+        panelVisible.initPanel = true;
+        //configuration of display and create panel
+        if(hasClassName(containerGlobal,"openingPage-doorAnimation"))
+        {
+            panelVisible.initPanel = false;
+            panelVisible.left = true;
+            panelVisible.right = true;
+            panelVisible.perpective = true;
+        }
+
+        if(panelLeft && ! panelVisible.left)
+        {
+            panelLeft.remove();
+            panelLeft = undefined;
+        }
+        if(panelRight && ! panelVisible.right)
+        {
+            panelRight.remove();
+            panelRight = undefined;
+        }
+
+    };
+
+
+
+
     var containerGlobal =  document.getElementsByClassName("containerGlobal")[0];
-    var containerGlobalClassSave = containerGlobal.className;
+
 
 //creation panel left and right
     var openingPage = containerGlobal.getElementsByClassName("openingPage")[0];
     var panel = openingPage.getElementsByClassName("panel-openingPage")[0];
 
-
-    var panelVisible ={};
-    panelVisible.initPanel = true;
-    //configuration of display and create panel
-    if(hasClassName(containerGlobal,"openingPage-doorAnimation"))
-    {
-        panelVisible.initPanel = false;
-        panelVisible.left = true;
-        panelVisible.right = true;
-        panelVisible.perpective = true;
-    }
+    this.changeAnimation();
 
     var panelLeft;
     var panelRight;
@@ -93,6 +112,7 @@ var openingAnimationPage = new function() {
     }
 
 
+
     /*
       ______               _      ____
      |  ____|             | |    / __ \
@@ -105,6 +125,8 @@ var openingAnimationPage = new function() {
      */
 
     var creationPanel = function(){
+
+
         //calcul size panelContent
         var panelContent = panel.getElementsByClassName("content-panel")[0];
         var width = panelContent.offsetWidth;
@@ -189,5 +211,6 @@ var openingAnimationPage = new function() {
     if (launchBack) {
         launchBack.addEventListener("click", _self.closeOpeningPage);
     }
+
 
 };
