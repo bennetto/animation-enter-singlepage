@@ -275,85 +275,341 @@ body{
 
 
 /*
-  __  __
- |  \/  |
- | \  / | _____   _____
- | |\/| |/ _ \ \ / / _ \
- | |  | | (_) \ V /  __/
- |_|  |_|\___/ \_/ \___|
+  __  __                  _____  _       _     _
+ |  \/  |                |  __ \(_)     | |   | |
+ | \  / | _____   _____  | |__) |_  __ _| |__ | |_
+ | |\/| |/ _ \ \ / / _ \ |  _  /| |/ _` | '_ \| __|
+ | |  | | (_) \ V /  __/ | | \ \| | (_| | | | | |_
+ |_|  |_|\___/ \_/ \___| |_|  \_\_|\__, |_| |_|\__|
+                                    __/ |
+                                   |___/
 */
 
-.openingPage-moveAnimation{
+.openingPage-moveRightAnimation{
   /* BODY */
   .body-site{}
   /* CENTER*/
   .panel{}
 }
 //open
-.openingPage-moveAnimation.open{
+.openingPage-moveRightAnimation.open{
   .body-site{
-    .animation( bodyAnimationMoveOpen 2s ease both );
+    .animation( bodyAnimationMoveRightOpen 2s ease both );
     .animation-fill-mode(forwards);
   }
   .panel-openingPage{
-    .animation( centerAnimationMoveOpen 2s ease both);
+    .animation( centerAnimationMoveRightOpen 2s ease both);
     .animation-fill-mode(forwards);
   }
 }
 //close
-.openingPage-moveAnimation.close{
+.openingPage-moveRightAnimation.close{
   .body-site{
-    .animation( bodyAnimationMoveClose 2s ease both);
+    .animation( bodyAnimationMoveRightClose 2s ease both);
     .animation-fill-mode(forwards);
   }
   .panel-openingPage{
-    .animation( centerAnimationMoveClose 2s ease both);
+    .animation( centerAnimationMoveRightClose 2s ease both);
     .animation-fill-mode(forwards);
   }
 }
 
 /*BODY*/
-@-webkit-keyframes bodyAnimationMoveOpen {.bodyAnimationMoveOpenF;}
-@-moz-keyframes bodyAnimationMoveOpen {.bodyAnimationMoveOpenF;}
-@-ms-keyframes bodyAnimationMoveOpen {.bodyAnimationMoveOpenF;}
-@-o-keyframes bodyAnimationMoveOpen {.bodyAnimationMoveOpenF;}
-@keyframes bodyAnimationMoveOpen {.bodyAnimationMoveOpenF;}
+@-webkit-keyframes bodyAnimationMoveRightOpen {.bodyAnimationMoveRightOpenF;}
+@-moz-keyframes bodyAnimationMoveRightOpen {.bodyAnimationMoveRightOpenF;}
+@-ms-keyframes bodyAnimationMoveRightOpen {.bodyAnimationMoveRightOpenF;}
+@-o-keyframes bodyAnimationMoveRightOpen {.bodyAnimationMoveRightOpenF;}
+@keyframes bodyAnimationMoveRightOpen {.bodyAnimationMoveRightOpenF;}
 
-.bodyAnimationMoveOpenF () {
+.bodyAnimationMoveRightOpenF () {
   0%   { .translate(-100%,0)}
   100%   {  .translate(0,0) }
 }
 
-@-webkit-keyframes bodyAnimationMoveClose {.bodyAnimationMoveCloseF;}
-@-moz-keyframes bodyAnimationMoveClose {.bodyAnimationMoveCloseF;}
-@-ms-keyframes bodyAnimationMoveClose {.bodyAnimationMoveCloseF;}
-@-o-keyframes bodyAnimationMoveClose {.bodyAnimationMoveCloseF;}
-@keyframes bodyAnimationMoveClose {.bodyAnimationMoveCloseF;}
+@-webkit-keyframes bodyAnimationMoveRightClose {.bodyAnimationMoveRightCloseF;}
+@-moz-keyframes bodyAnimationMoveRightClose {.bodyAnimationMoveRightCloseF;}
+@-ms-keyframes bodyAnimationMoveRightClose {.bodyAnimationMoveRightCloseF;}
+@-o-keyframes bodyAnimationMoveRightClose {.bodyAnimationMoveRightCloseF;}
+@keyframes bodyAnimationMoveRightClose {.bodyAnimationMoveRightCloseF;}
 
-.bodyAnimationMoveCloseF () {
+.bodyAnimationMoveRightCloseF () {
   0%   { .translate(0,0)}
   100%   {  .translate(-100%,0) }
 }
 
 /*CENTER*/
-@-webkit-keyframes centerAnimationMoveOpen {.centerAnimationMoveOpenF;}
-@-moz-keyframes centerAnimationMoveOpen {.centerAnimationMoveOpenF;}
-@-ms-keyframes centerAnimationMoveOpen {.centerAnimationMoveOpenF;}
-@-o-keyframes centerAnimationMoveOpen {.centerAnimationMoveOpenF;}
-@keyframes centerAnimationMoveOpen {.centerAnimationMoveOpenF;}
+@-webkit-keyframes centerAnimationMoveRightOpen {.centerAnimationMoveRightOpenF;}
+@-moz-keyframes centerAnimationMoveRightOpen {.centerAnimationMoveRightOpenF;}
+@-ms-keyframes centerAnimationMoveRightOpen {.centerAnimationMoveRightOpenF;}
+@-o-keyframes centerAnimationMoveRightOpen {.centerAnimationMoveRightOpenF;}
+@keyframes centerAnimationMoveRightOpen {.centerAnimationMoveRightOpenF;}
 
-.centerAnimationMoveOpenF () {
+.centerAnimationMoveRightOpenF () {
   0%   { .translate(0,0)}
   100%   {  .translate(100%,0) }
 }
 
-@-webkit-keyframes centerAnimationMoveClose {.centerAnimationMoveCloseF;}
-@-moz-keyframes centerAnimationMoveClose {.centerAnimationMoveCloseF;}
-@-ms-keyframes centerAnimationMoveClose {.centerAnimationMoveCloseF;}
-@-o-keyframes centerAnimationMoveClose {.centerAnimationMoveCloseF;}
-@keyframes centerAnimationMoveClose {.centerAnimationMoveCloseF;}
+@-webkit-keyframes centerAnimationMoveRightClose {.centerAnimationMoveRightCloseF;}
+@-moz-keyframes centerAnimationMoveRightClose {.centerAnimationMoveRightCloseF;}
+@-ms-keyframes centerAnimationMoveRightClose {.centerAnimationMoveRightCloseF;}
+@-o-keyframes centerAnimationMoveRightClose {.centerAnimationMoveRightCloseF;}
+@keyframes centerAnimationMoveRightClose {.centerAnimationMoveRightCloseF;}
 
-.centerAnimationMoveCloseF () {
+.centerAnimationMoveRightCloseF () {
   0%   { .translate(100%,0)}
+  100%   {  .translate(0,0) }
+}
+
+
+/*
+  __  __                  _           __ _
+ |  \/  |                | |         / _| |
+ | \  / | _____   _____  | |     ___| |_| |_
+ | |\/| |/ _ \ \ / / _ \ | |    / _ \  _| __|
+ | |  | | (_) \ V /  __/ | |___|  __/ | | |_
+ |_|  |_|\___/ \_/ \___| |______\___|_|  \__|
+*/
+
+.openingPage-moveLeftAnimation{
+  /* BODY */
+  .body-site{}
+  /* CENTER*/
+  .panel{}
+}
+//open
+.openingPage-moveLeftAnimation.open{
+  .body-site{
+    .animation( bodyAnimationMoveLeftOpen 2s ease both );
+    .animation-fill-mode(forwards);
+  }
+  .panel-openingPage{
+    .animation( centerAnimationMoveLeftOpen 2s ease both);
+    .animation-fill-mode(forwards);
+  }
+}
+//close
+.openingPage-moveLeftAnimation.close{
+  .body-site{
+    .animation( bodyAnimationMoveLeftClose 2s ease both);
+    .animation-fill-mode(forwards);
+  }
+  .panel-openingPage{
+    .animation( centerAnimationMoveLeftClose 2s ease both);
+    .animation-fill-mode(forwards);
+  }
+}
+
+/*BODY*/
+@-webkit-keyframes bodyAnimationMoveLeftOpen {.bodyAnimationMoveLeftOpenF;}
+@-moz-keyframes bodyAnimationMoveLeftOpen {.bodyAnimationMoveLeftOpenF;}
+@-ms-keyframes bodyAnimationMoveLeftOpen {.bodyAnimationMoveLeftOpenF;}
+@-o-keyframes bodyAnimationMoveLeftOpen {.bodyAnimationMoveLeftOpenF;}
+@keyframes bodyAnimationMoveLeftOpen {.bodyAnimationMoveLeftOpenF;}
+
+.bodyAnimationMoveLeftOpenF () {
+  0%   { .translate(100%,0)}
+  100%   {  .translate(0,0) }
+}
+
+@-webkit-keyframes bodyAnimationMoveLeftClose {.bodyAnimationMoveLeftCloseF;}
+@-moz-keyframes bodyAnimationMoveLeftClose {.bodyAnimationMoveLeftCloseF;}
+@-ms-keyframes bodyAnimationMoveLeftClose {.bodyAnimationMoveLeftCloseF;}
+@-o-keyframes bodyAnimationMoveLeftClose {.bodyAnimationMoveLeftCloseF;}
+@keyframes bodyAnimationMoveLeftClose {.bodyAnimationMoveLeftCloseF;}
+
+.bodyAnimationMoveLeftCloseF () {
+  0%   { .translate(0,0)}
+  100%   {  .translate(100%,0) }
+}
+
+/*CENTER*/
+@-webkit-keyframes centerAnimationMoveLeftOpen {.centerAnimationMoveLeftOpenF;}
+@-moz-keyframes centerAnimationMoveLeftOpen {.centerAnimationMoveLeftOpenF;}
+@-ms-keyframes centerAnimationMoveLeftOpen {.centerAnimationMoveLeftOpenF;}
+@-o-keyframes centerAnimationMoveLeftOpen {.centerAnimationMoveLeftOpenF;}
+@keyframes centerAnimationMoveLeftOpen {.centerAnimationMoveLeftOpenF;}
+
+.centerAnimationMoveLeftOpenF () {
+  0%   { .translate(0,0)}
+  100%   {  .translate(-100%,0) }
+}
+
+@-webkit-keyframes centerAnimationMoveLeftClose {.centerAnimationMoveLeftCloseF;}
+@-moz-keyframes centerAnimationMoveLeftClose {.centerAnimationMoveLeftCloseF;}
+@-ms-keyframes centerAnimationMoveLeftClose {.centerAnimationMoveLeftCloseF;}
+@-o-keyframes centerAnimationMoveLeftClose {.centerAnimationMoveLeftCloseF;}
+@keyframes centerAnimationMoveLeftClose {.centerAnimationMoveLeftCloseF;}
+
+.centerAnimationMoveLeftCloseF () {
+  0%   { .translate(-100%,0)}
+  100%   {  .translate(0,0) }
+}
+/*
+  __  __                  _______
+ |  \/  |                |__   __|
+ | \  / | _____   _____     | | ___  _ __
+ | |\/| |/ _ \ \ / / _ \    | |/ _ \| '_ \
+ | |  | | (_) \ V /  __/    | | (_) | |_) |
+ |_|  |_|\___/ \_/ \___|    |_|\___/| .__/
+                                    | |
+                                    |_|
+*/
+
+.openingPage-moveTopAnimation{
+  /* BODY */
+  .body-site{}
+  /* CENTER*/
+  .panel{}
+}
+//open
+.openingPage-moveTopAnimation.open{
+  .body-site{
+    .animation( bodyAnimationMoveTopOpen 2s ease both );
+    .animation-fill-mode(forwards);
+  }
+  .panel-openingPage{
+    .animation( centerAnimationMoveTopOpen 2s ease both);
+    .animation-fill-mode(forwards);
+  }
+}
+//close
+.openingPage-moveTopAnimation.close{
+  .body-site{
+    .animation( bodyAnimationMoveTopClose 2s ease both);
+    .animation-fill-mode(forwards);
+  }
+  .panel-openingPage{
+    .animation( centerAnimationMoveTopClose 2s ease both);
+    .animation-fill-mode(forwards);
+  }
+}
+
+/*BODY*/
+@-webkit-keyframes bodyAnimationMoveTopOpen {.bodyAnimationMoveTopOpenF;}
+@-moz-keyframes bodyAnimationMoveTopOpen {.bodyAnimationMoveTopOpenF;}
+@-ms-keyframes bodyAnimationMoveTopOpen {.bodyAnimationMoveTopOpenF;}
+@-o-keyframes bodyAnimationMoveTopOpen {.bodyAnimationMoveTopOpenF;}
+@keyframes bodyAnimationMoveTopOpen {.bodyAnimationMoveTopOpenF;}
+
+.bodyAnimationMoveTopOpenF () {
+  0%   { .translate(0,-100%)}
+  100%   {  .translate(0,0) }
+}
+
+@-webkit-keyframes bodyAnimationMoveTopClose {.bodyAnimationMoveTopCloseF;}
+@-moz-keyframes bodyAnimationMoveTopClose {.bodyAnimationMoveTopCloseF;}
+@-ms-keyframes bodyAnimationMoveTopClose {.bodyAnimationMoveTopCloseF;}
+@-o-keyframes bodyAnimationMoveTopClose {.bodyAnimationMoveTopCloseF;}
+@keyframes bodyAnimationMoveTopClose {.bodyAnimationMoveTopCloseF;}
+
+.bodyAnimationMoveTopCloseF () {
+  0%   { .translate(0,0)}
+  100%   {  .translate(0,-100%) }
+}
+
+/*CENTER*/
+@-webkit-keyframes centerAnimationMoveTopOpen {.centerAnimationMoveTopOpenF;}
+@-moz-keyframes centerAnimationMoveTopOpen {.centerAnimationMoveTopOpenF;}
+@-ms-keyframes centerAnimationMoveTopOpen {.centerAnimationMoveTopOpenF;}
+@-o-keyframes centerAnimationMoveBottomOpen {.centerAnimationMoveTopOpenF;}
+@keyframes centerAnimationMoveBottomOpen {.centerAnimationMoveTopOpenF;}
+
+.centerAnimationMoveTopOpenF () {
+  0%   { .translate(0,0)}
+  100%   {  .translate(0,100%) }
+}
+
+@-webkit-keyframes centerAnimationMoveTopClose  {.centerAnimationMoveTopCloseF;}
+@-moz-keyframes centerAnimationMoveTopClose  {.centerAnimationMoveTopCloseF;}
+@-ms-keyframes centerAnimationMoveTopClose  {.centerAnimationMoveTopCloseF;}
+@-o-keyframes centerAnimationMoveTopClose  {.centerAnimationMoveTopCloseF;}
+@keyframes centerAnimationMoveTopClose  {.centerAnimationMoveTopCloseF;}
+
+.centerAnimationMoveTopCloseF () {
+  0%   { .translate(0,100%)}
+  100%   {  .translate(0,0) }
+}
+
+/*
+  __  __                  ____        _   _
+ |  \/  |                |  _ \      | | | |
+ | \  / | _____   _____  | |_) | ___ | |_| |_ ___  _ __ ___
+ | |\/| |/ _ \ \ / / _ \ |  _ < / _ \| __| __/ _ \| '_ ` _ \
+ | |  | | (_) \ V /  __/ | |_) | (_) | |_| || (_) | | | | | |
+ |_|  |_|\___/ \_/ \___| |____/ \___/ \__|\__\___/|_| |_| |_|
+*/
+
+.openingPage-moveBottomAnimation{
+  /* BODY */
+  .body-site{}
+  /* CENTER*/
+  .panel{}
+}
+//open
+.openingPage-moveBottomAnimation.open{
+  .body-site{
+    .animation( bodyAnimationMoveBottomOpen 2s ease both );
+    .animation-fill-mode(forwards);
+  }
+  .panel-openingPage{
+    .animation( centerAnimationMoveBottomOpen 2s ease both);
+    .animation-fill-mode(forwards);
+  }
+}
+//close
+.openingPage-moveBottomAnimation.close{
+  .body-site{
+    .animation( bodyAnimationMoveBottomClose 2s ease both);
+    .animation-fill-mode(forwards);
+  }
+  .panel-openingPage{
+    .animation( centerAnimationMoveBottomClose 2s ease both);
+    .animation-fill-mode(forwards);
+  }
+}
+
+/*BODY*/
+@-webkit-keyframes bodyAnimationMoveBottomOpen {.bodyAnimationMoveBottomOpenF;}
+@-moz-keyframes bodyAnimationMoveBottomOpen {.bodyAnimationMoveBottomOpenF;}
+@-ms-keyframes bodyAnimationMoveBottomOpen {.bodyAnimationMoveBottomOpenF;}
+@-o-keyframes bodyAnimationMoveBottomOpen {.bodyAnimationMoveBottomOpenF;}
+@keyframes bodyAnimationMoveBottomOpen {.bodyAnimationMoveBottomOpenF;}
+
+.bodyAnimationMoveBottomOpenF () {
+  0%   { .translate(0,100%)}
+  100%   {  .translate(0,0) }
+}
+
+@-webkit-keyframes bodyAnimationMoveBottomClose {.bodyAnimationMoveBottomCloseF;}
+@-moz-keyframes bodyAnimationMoveBottomClose {.bodyAnimationMoveBottomCloseF;}
+@-ms-keyframes bodyAnimationMoveBottomClose {.bodyAnimationMoveBottomCloseF;}
+@-o-keyframes bodyAnimationMoveBottomClose {.bodyAnimationMoveBottomCloseF;}
+@keyframes bodyAnimationMoveBottomClose {.bodyAnimationMoveBottomCloseF;}
+
+.bodyAnimationMoveBottomCloseF () {
+  0%   { .translate(0,0)}
+  100%   {  .translate(0,100%) }
+}
+
+/*CENTER*/
+@-webkit-keyframes centerAnimationMoveBottomOpen {.centerAnimationMoveBottomOpenF;}
+@-moz-keyframes centerAnimationMoveBottomOpen {.centerAnimationMoveBottomOpenF;}
+@-ms-keyframes centerAnimationMoveBottomOpen {.centerAnimationMoveBottomOpenF;}
+@-o-keyframes centerAnimationMoveBottomOpen {.centerAnimationMoveBottomOpenF;}
+@keyframes centerAnimationMoveBottomOpen {.centerAnimationMoveBottomOpenF;}
+
+.centerAnimationMoveBottomOpenF () {
+  0%   { .translate(0,0)}
+  100%   {  .translate(0,-100%) }
+}
+
+@-webkit-keyframes centerAnimationMoveBottomClose {.centerAnimationMoveBottomCloseF;}
+@-moz-keyframes centerAnimationMoveBottomClose {.centerAnimationMoveBottomCloseF;}
+@-ms-keyframes centerAnimationMoveBottomClose {.centerAnimationMoveBottomCloseF;}
+@-o-keyframes centerAnimationMoveBottomClose {.centerAnimationMoveBottomCloseF;}
+@keyframes centerAnimationMoveBottomClose {.centerAnimationMoveBottomCloseF;}
+
+.centerAnimationMoveBottomCloseF () {
+  0%   { .translate(0,-100%)}
   100%   {  .translate(0,0) }
 }
